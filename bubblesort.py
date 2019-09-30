@@ -92,11 +92,13 @@ def main():
     answer = None
     unsortedList = []
     while (True):
-        answer = input("> ")
-        if (answer.lower() == "done"):
+        answer = input("> ").lower()
+        if (answer == "done"):
             break
         try:
             answer = float(answer)
+            if (answer.is_integer()):
+                answer = int(answer)
             print(color("green", f"Added {answer}"))
             unsortedList.append(answer)
         except:
